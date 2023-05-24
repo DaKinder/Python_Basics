@@ -34,7 +34,12 @@ print(f"{summ} -> {summ} ({tempNum // 100} + {tempNum //10%10} + {tempNum %10})"
 # 6 -> 1  4  1
 # 24 -> 4  16  4
 #     60 -> 10  40  10
+print('...Задача на подсчёт журавликов...')
+amount = int(input('Введите кол-во журавликов которые надо сделать: '))
+petya = seroja = amount // 6
+katya = (petya + seroja) * 2
 
+print(f'{amount} -> {petya} {katya} {seroja}')
 
 # Задача 6: Вы пользуетесь общественным транспортом?
 # Вероятно, вы расплачивались за проезд и получали билет с номером.
@@ -47,6 +52,16 @@ print(f"{summ} -> {summ} ({tempNum // 100} + {tempNum //10%10} + {tempNum %10})"
 
 # 385916 -> yes
 # 123456 -> no
+
+print('...Поиск счастливого билета...')
+ticket = input('Введите шестизначный номер билета: ')
+firstPart = int(ticket[0]) + int(ticket[1]) + int(ticket[2])
+secondPart = int(ticket[3]) + int(ticket[4]) + int(ticket[5])
+
+if firstPart == secondPart:
+    print(f'{ticket} -> YES')
+else:
+    print(f'{tiket} -> NO')
 
 
 # Задача 8: Требуется определить, можно ли от шоколадки размером n × m долек
