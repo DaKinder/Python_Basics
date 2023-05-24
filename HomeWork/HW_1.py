@@ -5,22 +5,22 @@
 # 123 -> 6 (1 + 2 + 3)
 # 100 -> 1 (1 + 0 + 0) |
 
-# print("...Программа поиска сцммы цифр трехзначного числа...")
-# inputNum = int(input('Введите число:'))
-# flag = True
-# while (flag):
-#     if inputNum < 100 or inputNum >= 1000:
-#         inputNum = int(input('Попробуйте ещё разок: '))
-#     else:
-#         flag = False
+print("...Программа поиска сцммы цифр трехзначного числа...")
+inputNum = int(input('Введите число:'))
+flag = True
+while (flag):
+    if inputNum < 100 or inputNum >= 1000:
+        inputNum = int(input('Попробуйте ещё разок: '))
+    else:
+        flag = False
 
-# tempNum = inputNum
-# summ = 0
-# while (inputNum > 0):
-#     summ += inputNum % 10
-#     inputNum //= 10
+tempNum = inputNum
+summ = 0
+while (inputNum > 0):
+    summ += inputNum % 10
+    inputNum //= 10
 
-# print(f"{summ} -> {summ} ({tempNum // 100} + {tempNum //10%10} + {tempNum %10})")
+print(f"{summ} -> {summ} ({tempNum // 100} + {tempNum //10%10} + {tempNum %10})")
 
 
 # Задача 4: Петя, Катя и Сережа делают из бумаги журавликов.
@@ -34,12 +34,13 @@
 # 6 -> 1  4  1
 # 24 -> 4  16  4
 #     60 -> 10  40  10
-# print('...Задача на подсчёт журавликов...')
-# amount = int(input('Введите кол-во журавликов которые надо сделать: '))
-# petya = seroja = amount // 6
-# katya = (petya + seroja) * 2
 
-# print(f'{amount} -> {petya} {katya} {seroja}')
+print('...Задача на подсчёт журавликов...')
+amount = int(input('Введите кол-во журавликов которые надо сделать: '))
+petya = seroja = amount // 6
+katya = (petya + seroja) * 2
+
+print(f'{amount} -> {petya} {katya} {seroja}')
 
 # Задача 6: Вы пользуетесь общественным транспортом?
 # Вероятно, вы расплачивались за проезд и получали билет с номером.
@@ -53,16 +54,16 @@
 # 385916 -> yes
 # 123456 -> no
 
-# print('...Поиск счастливого билета...')
-# ticket = input('Введите шестизначный номер билета: ')
+print('...Поиск счастливого билета...')
+ticket = input('Введите шестизначный номер билета: ')
 
-# firstPart = int(ticket[0]) + int(ticket[1]) + int(ticket[2])
-# secondPart = int(ticket[3]) + int(ticket[4]) + int(ticket[5])
+firstPart = int(ticket[0]) + int(ticket[1]) + int(ticket[2])
+secondPart = int(ticket[3]) + int(ticket[4]) + int(ticket[5])
 
-# if firstPart == secondPart:
-#     print(f'{ticket} -> YES')
-# else:
-#     print(f'{ticket} -> NO')
+if firstPart == secondPart:
+    print(f'{ticket} -> YES')
+else:
+    print(f'{ticket} -> NO')
 
 
 # Задача 8: Требуется определить, можно ли от шоколадки размером n × m долек
