@@ -14,7 +14,21 @@ for i in range(n) :
         count +=1
 
 print(list)
-print(f'Кол-во перевёрнутых монет = {count}')
+
+heads = 0
+tails = 0
+for i in range(len(list)) :
+    if list[i] == 1 :
+        tails += 1
+    else :
+        heads += 1
+
+if heads < tails :
+    print(f'Перевернули {heads} орлов')
+elif heads > tails :
+    print(f'Перевернули {tails} решек')
+else :
+    print(f'Пофиг что переворачивать, {tails} монет и так и так')
 
 
 # Задача 12: Петя и Катя – брат и сестра. Петя – студент, а Катя – школьница.
@@ -46,12 +60,12 @@ while flag :
 
 # Задача 14: Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числа N.
 
-print("=== СТЕПЕНИ ДВОЙКИ ДО ЗАДАННОГО ЧИСЛА ===")
+# print("=== СТЕПЕНИ ДВОЙКИ ДО ЗАДАННОГО ЧИСЛА ===")
 
-number = int(input("Введите верхнюю границу диапазона: "))
-result = 2
+# number = int(input("Введите верхнюю границу диапазона: "))
+# result = 2
 
-print("Ряд степеней двойки:")
-while result <= number:
-    print(f'{result} {}')
-    result = result * 2
+# print("Ряд степеней двойки:")
+# while result <= number:
+#     print(result, end=" ")
+#     result = result * 2
