@@ -60,12 +60,12 @@ while flag :
 
 # Задача 14: Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числа N.
 
-# print("=== СТЕПЕНИ ДВОЙКИ ДО ЗАДАННОГО ЧИСЛА ===")
+print("=== СТЕПЕНИ ДВОЙКИ ДО ЗАДАННОГО ЧИСЛА ===")
 
-# number = int(input("Введите верхнюю границу диапазона: "))
-# result = 2
+number = int(input("Введите верхнюю границу диапазона: "))
+result = 2
 
-# print("Ряд степеней двойки:")
-# while result <= number:
-#     print(result, end=" ")
-#     result = result * 2
+print("Ряд степеней двойки:")
+while result <= number:
+    print(result, end=" ")
+    result = result * 2
