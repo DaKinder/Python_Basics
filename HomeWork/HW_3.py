@@ -40,7 +40,7 @@ print(f'Число {userInput} встречается {count} раз')
 # output -> 5
 
 
-myList2 = [random.randint(0,100) for item in range(int(input('Введите длину списка: ')))]
+myList2 = [rnd.randint(0,100) for item in range(int(input('Введите длину списка: ')))]
 
 print(*myList2)
 
