@@ -1,4 +1,6 @@
-from Phonebook import show_contacts
+import os
+from Phonebook import main
+from Phonebook import *
+path = 'Seminars\myBook.txt'
 
-path = 'D:\GeekBrains\PythonBasic\Seminars\myBook.txt'
-show_contacts(path)
+main(path)
