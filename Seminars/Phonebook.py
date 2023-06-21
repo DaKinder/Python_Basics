@@ -40,35 +40,34 @@ def find_contact(myBook):
     input('Press Enter')
 
 # edits contact
-def edit_contact(myBook): 
-    os.system('CLS')
-    with open(myBook, 'r', encoding='utf-16') as data:
-        phone_book = data.read()
-        print(phone_book)
+def edit_contact(myBook):
+    os.system('cls')
+    request = input('Search: ')
+
+    with open(myBook, 'r', encoding='utf-16') as file:
+        contacts = file.readlines()
+        index = 0
+        for line in contacts:
+            if request in line:
+                line = line.split()
+                drawing_edit()
+                break
+            index += 1
         
-        index_data = int(input('Input number of a line to correction: ')) -1
-        phone_book_lines = phone_book.split('\n')
-        edit_phone_book_lines = phone_book_lines[index_data]
-        elements = edit_phone_book_lines.split('\n')
-        surname = input('Input a surname: ')
-        phone_number = input('Input a number: ')
-        num = elements[0]
+        target = int(input('Choose a number: '))
+        if target == 1:
+            line[0] = input('Enter a Surname: ')
+        elif target == 2:
+            line[1] = input('Enter a Name: ')
+        elif target == 3:
+            line[2] = input('Enter a Phone Number: ')   
+        contacts.pop(index)
+        old_contacts = ' '.join(contacts)
+        edited_contact = ' '.join(line)
         
-        if len(surname) == 0:
-            surname = elements[1]
-        
-        if len(phone_number) == 0:
-            phone_number = elements[2]
-            
-        edited_line = f'{num} {surname} {phone_number}' 
-        phone_book_lines[index_data] = edited_line
-        print(f'The line {edit_phone_book_lines} was correctly edited as {edited_line}\n')
-        
-        with open(myBook, 'w', encoding='utf-16') as f:
-            f.write('\n'.join(phone_book_lines))
-        
-        
-        
+
+        with open(myBook, 'w', encoding='utf-16') as file:
+            file.write(f'{old_contacts}\n{edited_contact}')
 
 #deletes contact
 def delete_contact(myBook):
@@ -121,8 +120,8 @@ def main(path):
             find_contact(path)
         elif user_input == 4:
             edit_contact(path)
-        # elif user_input == 5:
-            # delete_contact(path)
+        elif user_input == 5:
+            delete_contact(path)
         elif user_input == 'q':
             print('Finish')
             return
