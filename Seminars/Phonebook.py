@@ -51,20 +51,20 @@ def edit_contact(myBook):
             if request in line:
                 line = line.split()
                 drawing_edit()
-                break
+                target = int(input('Choose a number: '))
+                if target == 1:
+                    line[0] = input('Enter a Surname: ')
+                elif target == 2:
+                    line[1] = input('Enter a Name: ')
+                elif target == 3:
+                    line[2] = input('Enter a Phone Number: ')
+                else:
+                    return
+                 
+                contacts.pop(index)
+                old_contacts = ''.join(contacts)
+                edited_contact = ' '.join(line)
             index += 1
-        
-        target = int(input('Choose a number: '))
-        if target == 1:
-            line[0] = input('Enter a Surname: ')
-        elif target == 2:
-            line[1] = input('Enter a Name: ')
-        elif target == 3:
-            line[2] = input('Enter a Phone Number: ')   
-        contacts.pop(index)
-        old_contacts = ' '.join(contacts)
-        edited_contact = ' '.join(line)
-        
 
         with open(myBook, 'w', encoding='utf-16') as file:
             file.write(f'{old_contacts}\n{edited_contact}')
